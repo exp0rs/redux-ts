@@ -1,16 +1,16 @@
-import path from 'path';
-import webpack from 'webpack';
 import 'webpack-dev-server';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
+import path from 'path';
+import { buildWebpackConfig } from './config/build/buildWebpackConfig';
+import { envBuild } from './config/build/types/buildWebpack';
 
-const config: webpack.Configuration = {
-	mode: 'development',
-	entry: path.resolve(__dirname, 'src', 'index.ts'),
-	output: {
-		path: path.resolve(__dirname, 'dist'),
-		filename: '[name].[contenthash].bundle.js',
-	},
-	plugins: [new HtmlWebpackPlugin({})],
+export default (env: envBuild) => {
+	const paths = {
+		entry: path.resolve(__dirname, 'src', 'index.ts'),
+		output: path.resolve(__dirname, 'dist'),
+		htmlTemplate: path.resolve(__dirname, 'public', 'index.html'),
+	};
+	let mode = env.mode || 'development';
+	const isDev = mode == 'development' ? true : false;
+	const port = env.port || 3000;
+	return buildWebpackConfig({ paths, isDev, port, mode });
 };
-
-export default config;
