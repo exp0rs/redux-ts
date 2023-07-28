@@ -19,7 +19,7 @@ export const buildWebpackConfig = (
 			filename: '[name].[contenthash].bundle.js',
 			clean: true,
 		},
-		module: buildWebpackLoaders(),
+		module: buildWebpackLoaders(options),
 		resolve: buildWebpackResolvers(),
 		plugins: buildWebpackPlugins(options),
 	};
