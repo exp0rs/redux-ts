@@ -12,9 +12,11 @@
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
+		"@redux-devtools/extension": "^3.2.5",
 		"@types/node": "^20.4.5",
 		"@types/react": "^18.2.17",
 		"@types/react-dom": "^18.2.7",
+		"@types/react-redux": "^7.1.25",
 		"@types/webpack": "^5.28.1",
 		"@types/webpack-dev-server": "^4.7.2",
 		"css-loader": "^6.8.1",
@@ -30,7 +32,11 @@
 		"webpack-dev-server": "^4.15.1"
 	},
 	"dependencies": {
+		"axios": "^1.4.0",
 		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
+		"react-dom": "^18.2.0",
+		"react-redux": "^8.1.1",
+		"redux": "^4.2.1",
+		"redux-thunk": "^2.4.2"
 	}
 }
