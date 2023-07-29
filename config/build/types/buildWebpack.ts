@@ -6,6 +6,7 @@ export interface envBuild {
 }
 export interface webpackConfigOptions {
 	paths: {
+		src: string;
 		entry: string;
 		output: string;
 		htmlTemplate: string;

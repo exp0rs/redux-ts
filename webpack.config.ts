@@ -5,6 +5,7 @@ import { envBuild } from './config/build/types/buildWebpack';
 
 export default (env: envBuild) => {
 	const paths = {
+		src: path.resolve(__dirname, 'src'),
 		entry: path.resolve(__dirname, 'src', 'index.tsx'),
 		output: path.resolve(__dirname, 'dist'),
 		htmlTemplate: path.resolve(__dirname, 'public', 'index.html'),
